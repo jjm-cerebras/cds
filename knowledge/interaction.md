@@ -36,3 +36,9 @@ Underline this treatment on hover and active. Keep it neutral when orange text w
 Do not map the text token directly to `color.brand.accent` on a light surface.
 
 Buttons and links do not use visited-state styling.
+
+## Disabled controls
+
+Disabled buttons must not retain the fully saturated orange accent, because that can make them continue to look actionable.
+
+...
