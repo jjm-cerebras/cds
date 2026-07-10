@@ -1,19 +1,13 @@
 {
 	"color": {
 		"$type": "color",
-		"orange": {
-			"8": {
-				"$value": {
-					"colorSpace": "oklch",
-					"components": [0.776, 0.145, 49.61]
-				}
-			},
-			"9": {
-				"$value": {
-					"colorSpace": "oklch",
-					"components": [0.661, 0.196, 37.71]
-				}
-			}
+		"orange-9": {
+			"$value": "oklch(0.661, 0.196, 37.71)",
+			"$description": "base color"
+		},
+		"orange-8": {
+			"$value": "oklch(0.776, 0.145, 49.61)",
+			"$description": "hover color"
 		}
 	}
 }
