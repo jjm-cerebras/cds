@@ -1,8 +1,3 @@
----
-type: Interaction Rule
-title: Interaction Rule
----
-
 # Interaction Rule
 
 ## Button vs link
