@@ -1,11 +1,11 @@
 {
 	"primitive": {
 		"$type": "color",
-		"orange-9": {
+		"orange-500": {
 			"$value": "oklch(0.661, 0.196, 37.71)",
 			"$description": "base color"
 		},
-		"orange-8": {
+		"orange-300": {
 			"$value": "oklch(0.776, 0.145, 49.61)",
 			"$description": "hover color"
 		},
