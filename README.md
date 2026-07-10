@@ -22,7 +22,7 @@ AI-ready design system pairs OKF guidance with DTCG design tokens
 The category, element, priority, and state lists share no term, and a term is never reassigned between slots. Terms are single lowercase words and `-` appears only as the delimiter. This is what lets a name with omitted slots parse by registry lookup to exactly one reading.
 
 **Primitive**
-[category?]-[element]-[ramp]
+[type?]-[element]-[ramp]
 - category: color, size, space, weight, height, width, radius, opacity, shadow, z-index, etc
 - element: orange, text, etc
 - ramp: 500, small, semibold, etc
@@ -35,7 +35,7 @@ examples
 - tracking-small
 
 **Semantic**
-[category]-[element]-[tier?]-[state?]
+[type]-[element]-[tier?]-[state?]
 - category: color, size, space, weight, height, width, radius, opacity, shadow, z-index, etc
 - element: background, text, icon, border, etc
 - tier: primary, secondary, tertiaey, utility, ghost, etc
