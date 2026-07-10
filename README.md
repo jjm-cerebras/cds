@@ -9,11 +9,8 @@ This repository pairs OKF guidance with DTCG design tokens so implementation met
 
 ### Repo structure
 
-**DTCG $value** \
-aliases, and $description contain machine-readable token definitions and concise purpose
+**Tokens** \
+machine-readable token values, definitions, and concise purpose
 
-**DTCG $extensions** \
-implementation and governance metadata, such as CSS custom-property names and allowed consumption levels
-
-**OKF** \
+**Knowledge** \
 detailed usage guidance, examples, accessibility notes, and related design rules
