@@ -9,10 +9,10 @@ AI-ready design system pairs OKF guidance with DTCG design tokens
 
 ### Repo structure
 
-**Knowledge** \
+**Knowledge**
 - Detailed usage guidance, examples, accessibility, and related design rules
  
-**Tokens** \
+**Tokens**
 - Machine-readable token values, definitions, and concise purpose
 
 ### Naming convention
