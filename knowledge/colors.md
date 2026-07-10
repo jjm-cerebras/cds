@@ -1,5 +1,5 @@
-# Color Tokens Guideline
-Rationale and usage judgment for the accent color
+# Colors
+Rationale and usage judgment for the all colors
 
 ## System conventions
 
