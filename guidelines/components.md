@@ -1,11 +1,8 @@
 ---
-version: 0.2.0
+version: 0.1.4
 type: reference
 title: components
-resource: /Users/jj.moi/Desktop/cds-playground-2/tokens, /Users/jj.moi/Desktop/cds-playground-3/foundations
-source: consolidated from the per-component references (extracted from the shipped @cerebras/common + web-common libraries and the live Cerebras Cloud pages)
 timestamp: 2026-07-17T00:00:00Z
-exploration: playground-3
 ---
 
 # Components
