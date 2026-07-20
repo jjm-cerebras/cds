@@ -1,49 +1,37 @@
 # - WORK IN PROGRESS -
 
-# CDS AI
+# CDS (Cerebras Design System)
 
-AI-ready design system pairs OKF guidance with DTCG design tokens
+Using DTCG design tokens
 
 <https://github.com/GoogleCloudPlatform/knowledge-catalog> \
 <https://www.designtokens.org>
 
 ### Repo structure
 
-**Knowledge**
+**DESIGN.md**
+- Design system specification that teaches AI agents how to design and implement interfaces consistently
+
+**Guidelines**
 - Detailed usage guidance, examples, accessibility, and related design rules
  
 **Tokens**
 - Machine-readable token values, definitions, and concise purpose
 
-### Naming convention
+**Source**
+- Component library of approved UI components in isolation to serve as the visual reference
 
-**Slot vocabularies are disjoint**
+---
 
-The category, element, priority, and state lists share no term, and a term is never reassigned between slots. Terms are single lowercase words and `-` appears only as the delimiter. This is what lets a name with omitted slots parse by registry lookup to exactly one reading.
+### Token architecture
 
-**Primitive**
-[type?]-[element]-[ramp]
-- category: color, size, space, weight, height, width, radius, opacity, shadow, z-index, etc
-- element: orange, text, etc
-- ramp: 500, small, semibold, etc
-- ? = optional
+**Structure**
+- 3-tier system — primitive, semantic, component
+- Primitive tokens are raw values (colors, spacing, radii, type sizes). Named by scale/value, not by usage.
+- Semantic tokens reference primitives and encode intent (e.g., --color-accent → --color-orange-500).
+- The trigger for adding a component tier is when more than 3 components need the same semantic override that doesn't map to an existing semantic token.
 
-examples
-- color-orange-500
-- orange-500
-- text-medium
-- tracking-small
-
-**Semantic**
-[type]-[element]-[tier?]-[state?]
-- category: color, size, space, weight, height, width, radius, opacity, shadow, z-index, etc
-- element: background, text, icon, border, etc
-- tier: primary, secondary, tertiaey, utility, ghost, etc
-- state: default, active, disabled, hover, etc
-- ? = optional
-
-examples
-- color-background-primary-hover
-- color-background-secondary (no state = default)
-- color-text-disabled (skip tier)
-- size-icon (category + element only)
+**Token format**
+- DTCG-compliant JSON ($value / $type) for tooling and handoff
+- Color values are in OKLCH
+- CSS custom properties for runtime use
