@@ -54,7 +54,7 @@ measure the rendered result, not the box value.
 
 ### Toolbar / search row
 
-- **MUST** place the result count (`small-text`, `foreground-muted`) above the control row.
+- **OPTIONAL** place the result count (`small-text`, `foreground-muted`) above the control row.
 - **MUST** let the search field flex to fill the row (`flex: 1`) and keep the **Filter** button
   (`button-secondary`) fixed and flush-right, aligned to the table's right edge.
 - Gap between the search field and the Filter button: `spacing.2` (8px).
