@@ -1,9 +1,9 @@
 # CDS (Cerebras Design System)
 
-Using DTCG design tokens
+Using DTCG design token format and OKF repo structure
 
-<https://github.com/GoogleCloudPlatform/knowledge-catalog> \
-<https://www.designtokens.org>
+<https://www.designtokens.org> \
+<https://github.com/GoogleCloudPlatform/knowledge-catalog>
 
 ### Repo structure
 
