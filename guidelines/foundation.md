@@ -7,10 +7,11 @@ timestamp: 2026-07-17T00:00:00Z
 
 # Foundation
 
-How the [`tokens/`](../tokens/) combine into the CDS look and feel. Each section states the rules (RFC 2119: MUST, MUST NOT, SHOULD, MAY) that the raw token values can't carry on their own.
+How the [`tokens/`](../tokens/) combine into the CDS (Cerebras Design System) look and feel. Each section states the rules (RFC 2119: MUST, MUST NOT, SHOULD, MAY) that the raw token values can't carry on their own.
 
 ### Index
 
+- [Overview](#overview)
 - [Colors](#colors)
 - [Typography](#typography)
 - [Layout](#layout)
@@ -20,6 +21,10 @@ How the [`tokens/`](../tokens/) combine into the CDS look and feel. Each section
 - [Icons](#icons)
 
 ---
+
+## Overview
+
+CDS is a portable, token-first manifest for producing anything that should look like it belongs in the Cerebras Cloud platform — product UI, dashboards, tables, forms, onboarding, or docs surfaces. Cerebras expresses technical excellence of frontier AI infrastructure through clarity, precision, and confidence. The brand personality is intelligent, trustworthy, and forward-looking which visually translates to technical simplicity, structured, and intentionally minimal. 
 
 ## Colors
 
