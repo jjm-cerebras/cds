@@ -5,7 +5,7 @@ title: design foundation
 timestamp: 2026-07-17T00:00:00Z
 ---
 
-# Foundations
+# Foundation
 
 How the [`tokens/`](../tokens/) combine into the CDS look and feel. Each section states the rules (RFC 2119: MUST, MUST NOT, SHOULD, MAY) that the raw token values can't carry on their own.
 
