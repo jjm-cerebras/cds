@@ -8,10 +8,10 @@ Using DTCG design tokens
 ### Repo structure
 
 **AGENT.md**
-- Instructions that teache AI agents how to design and implement interfaces consistently
+- Instructions for AI agents to design and implement interfaces consistently
 
 **Guidelines**
-- Detailed usage guidance, examples, accessibility, and related design rules
+- Design principles and rules, detailed usage guidance, examples, accessibility
  
 **Tokens**
 - Machine-readable token values, definitions, and concise purpose
