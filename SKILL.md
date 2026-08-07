@@ -9,7 +9,7 @@ A token-first design system for the Cerebras Cloud platform. Everything is bundl
 
 ## Start here
 
-Read **`DESIGN.md`** first. It's the manifest: overview, do's & don'ts, voice, accessibility, and responsive rules, with links to everything below.
+Read **`AGENT.md`** first. It's the instructions for AI agents to follow.
 
 ## Where things live
 
@@ -21,7 +21,7 @@ Read **`DESIGN.md`** first. It's the manifest: overview, do's & don'ts, voice, a
 - **`guidelines/workflow.md`** — the two-layer model (approved components vs manifest) and how to build a page or a new component.
 - **`guidelines/accessibility.md`** — the WCAG 2.2 AA contract: keyboard, focus, and ARIA per component, plus a **generated contrast table** with flagged sub-AA pairings.
 - **`src/`** — the reference React component library (all 13 components) + the `tokens.css` / `tokens.ts` bridge and `components.css` (pseudo-state styling). `src/index.ts` is the barrel export.
-- **`examples/`** — static HTML the components render to: `components.html` (the full gallery, generated from `src/`) and `clusters.html` (the list/table page pattern).
+- **`examples/`** — static HTML the components render to: `components.html` (the full gallery, generated from `src/`) and `clusters.html` (the list/table page pattern). It's only for human to reference.
 - **`scripts/`** — `build-tokens.mjs` (JSON → `tokens.css`), `render-examples.tsx` (SSR gallery), `contrast-table.mjs`, `check-token-refs.mjs`, `check-hardcoded.mjs`.
 
 ## Commands
