@@ -13,16 +13,16 @@ Read **`AGENTS.md`** first. It's the instructions for AI agents to follow.
 
 ## Where things live
 
-- **`tokens/`** — source of truth (DTCG JSON). `primitive.json` (raw ramps), `semantic.json` (aliases like `accent`, `surface`, `foreground`), `alias.json` (component bindings), plus per-component token files. **`src/tokens.css` is generated from these** — never hand-edit it.
-- **`guidelines/foundation.md`** — how tokens combine: colors, typography, layout, elevation, shapes, motion, icons.
-- **`guidelines/components.md`** — behavioural rules per component (variants, when to use which, anti-patterns).
-- **`guidelines/patterns.md`** — full-page composition templates (e.g. list/table view). Reference build: `examples/clusters.html`.
-- **`guidelines/principles.md`** — emphasis & hierarchy rules.
-- **`guidelines/workflow.md`** — the two-layer model (approved components vs manifest) and how to build a page or a new component.
-- **`guidelines/accessibility.md`** — the WCAG 2.2 AA contract: keyboard, focus, and ARIA per component, plus a **generated contrast table** with flagged sub-AA pairings.
-- **`src/`** — the reference React component library (all 13 components) + the `tokens.css` / `tokens.ts` bridge and `components.css` (pseudo-state styling). `src/index.ts` is the barrel export.
-- **`examples/`** — static HTML the components render to: `components.html` (the full gallery, generated from `src/`) and `clusters.html` (the list/table page pattern). It's only for human to reference.
-- **`scripts/`** — `build-tokens.mjs` (JSON → `tokens.css`), `render-examples.tsx` (SSR gallery), `contrast-table.mjs`, `check-token-refs.mjs`, `check-hardcoded.mjs`.
+- **`tokens/`** — source of truth (DTCG JSON). `primitive.json` (raw ramps), `semantic.json` (aliases like `accent`, `surface`, `foreground`), `alias.json` (component bindings), plus per-component token files. **`src/tokens.css` is generated from these** — never hand-edit it
+- **`guidelines/principles.md`** — emphasis & hierarchy rules
+- **`guidelines/foundation.md`** — how tokens combine: colors, typography, layout, elevation, shapes, motion, icons
+- **`guidelines/workflow.md`** — the two-layer model (approved components vs manifest) and how to build a page or a new component
+- **`guidelines/accessibility.md`** — the WCAG 2.2 AA contract: keyboard, focus, and ARIA per component, plus a **generated contrast table** with flagged sub-AA pairings
+- **`guidelines/components.md`** — behavioural rules per component (variants, when to use which, anti-patterns)
+- **`guidelines/patterns.md`** — full-page composition templates (e.g. list/table view). Reference build: `examples/clusters.html`
+- **`src/`** — the reference React component library (all 13 components) + the `tokens.css` / `tokens.ts` bridge and `components.css` (pseudo-state styling). `src/index.ts` is the barrel export
+- **`examples/`** — static HTML the components render to: `components.html` (the full gallery, generated from `src/`) and `clusters.html` (the list/table page pattern). It's only for human to reference
+- **`scripts/`** — `build-tokens.mjs` (JSON → `tokens.css`), `render-examples.tsx` (SSR gallery), `contrast-table.mjs`, `check-token-refs.mjs`, `check-hardcoded.mjs`
 
 ## Commands
 
@@ -34,7 +34,7 @@ npm run lint       # token refs + hardcoded colors + stylelint + jsx-a11y
 npm run build      # tokens + typecheck + examples
 ```
 
-## Non-negotiables (verify against `DESIGN.md` for the full list)
+## Non-negotiables (verify against `guidelines/foundation.md` for the full list)
 
 - Reference tokens by key in prose; emit resolved values in code. **Never hardcode** a color, spacing, or radius that has a token.
 - Warm `surface` canvas, white cards on top; elevation via soft `shadow`, not heavy drop shadows.
