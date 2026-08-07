@@ -1,5 +1,3 @@
-# - WORK IN PROGRESS -
-
 # CDS (Cerebras Design System)
 
 Using DTCG design tokens
