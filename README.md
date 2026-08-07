@@ -10,13 +10,13 @@ Using DTCG design tokens
 **AGENTS.md**
 - Instructions for AI agents to design and implement interfaces consistently
 
-**Guidelines**
+**/guidelines**
 - Design principles and rules, detailed usage guidance, examples, accessibility
  
-**Tokens**
+**/tokens**
 - Machine-readable token values, definitions, and concise purpose
 
-**Components**
+**/src**
 - Component library of approved UI components in isolation to serve as the visual reference
 
 ---
