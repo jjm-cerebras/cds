@@ -7,7 +7,7 @@ Using DTCG design tokens
 
 ### Repo structure
 
-**AGENT.md**
+**AGENTS.md**
 - Instructions for AI agents to design and implement interfaces consistently
 
 **Guidelines**
