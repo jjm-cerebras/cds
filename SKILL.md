@@ -1,6 +1,6 @@
 ---
 name: design-cds
-description: Build UI that belongs in the Cerebras Cloud platform — product UI, dashboards, tables, forms, onboarding, docs surfaces. Use whenever generating or reviewing HTML/CSS/React that must follow the Cerebras Design System (CDS): its tokens (OKLCH colors, 4px spacing, 2px radius, Manrope + Sometype Mono), foundations, components (Button, Table, Breadcrumbs, Heading, Textbox, Chips, Tabs, Banner, etc.), page patterns, accessibility contract, and voice. Triggers on "Cerebras", "CDS", "cds-*" tokens, or requests to match the Cerebras look.
+description: Build UI that belongs in the Cerebras Cloud platform. Use whenever generating or reviewing HTML/CSS/React that must follow the CDS (Cerebras Design System)
 ---
 
 # Cerebras Design System
