@@ -1,4 +1,4 @@
-# Instructions for AI agents workflow
+# Instructions for AI agents
 
 1. Read this file and follow instructions in the ordering of steps below
 2. Read files in cds/guidelines/
