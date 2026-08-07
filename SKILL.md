@@ -9,7 +9,7 @@ A token-first design system for the Cerebras Cloud platform. Everything is bundl
 
 ## Start here
 
-Read **`AGENT.md`** first. It's the instructions for AI agents to follow.
+Read **`AGENTS.md`** first. It's the instructions for AI agents to follow.
 
 ## Where things live
 
