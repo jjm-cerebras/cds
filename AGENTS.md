@@ -1,7 +1,7 @@
 # Instructions for AI agents
 
 1. Read this file first, then work in this order. Paths are relative to the repo root.
-2. **`guidelines/`** — `principles.md` → `foundation.md` → `components.md` → `patterns.md`. Load only what the task requires.
+2. **`guidelines/`** — `workflow.md` → `principles.md` → `foundation.md` → `accessibility.md` → `components.md` → `patterns.md`. Load only what the task requires.
 3. **`src/`** — use an existing component at its intended API before building anything new.
 4. **`tokens/`** — resolve every `{group.token}` reference here. `src/tokens.css` is generated; never hand-edit it.
 
