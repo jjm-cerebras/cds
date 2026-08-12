@@ -105,7 +105,7 @@ WCAG 2.2 AA is the floor for every CDS surface. RFC 2119 keywords (MUST, MUST NO
 - MUST: Text containers handle long content (`truncate`, `line-clamp-*`, `break-words`)
 - MUST: Flex children need `min-w-0` to allow truncation
 - MUST: Handle empty states—no broken UI for empty strings/arrays
-- MUST: -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
+- MUST: Apply antialiased smoothing to the root layout so all text renders crisper and thinner (-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;)
 
 ---
 
