@@ -39,10 +39,18 @@ WCAG 2.2 AA is the floor for every CDS surface. RFC 2119 keywords (MUST, MUST NO
 
 ---
 
-## Keyboard & ARIA per component
+## General
 
-Each component's interaction contract. "Roving tabindex" = one tab stop for the group; arrow keys
-move within it.
+**Keyboard & ARIA per component**
+
+- SHOULD: Each component's interaction contract
+- SHOULD: "Roving tabindex" = one tab stop for the group; arrow keys move within it
+- MUST: Full keyboard support per [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/)
+- MUST: Visible focus rings (`:focus-visible`; group with `:focus-within`)
+- MUST: Manage focus (trap, move, return) per APG patterns
+- NEVER: `outline: none` without visible focus replacement
+
+---
 
 | Component | Roles / attributes | Keyboard |
 | --------- | ------------------ | -------- |
