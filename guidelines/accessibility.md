@@ -9,48 +9,123 @@ timestamp: 2026-08-12T00:00:00Z
 
 WCAG 2.2 AA is the floor for every CDS surface. RFC 2119 keywords (MUST, MUST NOT, SHOULD, MAY) apply.
 
-### Index
-
-- [Focus](#focus)
-- [Keyboard & ARIA per component](#keyboard--aria-per-component)
-- [Motion](#motion)
-- [Contrast (generated)](#contrast-generated)
-
 ---
 
-## Focus
-
-- **MUST** show a visible focus indicator on every focusable control; **never** `outline: none`
-  without a replacement. Two canonical indicators (see [Shapes](./foundation.md#shapes)):
-  - **Buttons, menu items, links, tabs** — `outline: 2px solid var(--colors-focus)` at `2px` offset
-    (the `.cds-focus` utility in [`src/components.css`](../src/components.css)).
-  - **Inputs, dropdown triggers, selects** — a `focus` border + a solid 2px `focus` ring
-    (`.cds-focus-ring`), `outline: none` replaced by the ring. The ring is solid (not a translucent
-    glow) and renders outside the field's inline-styled border, so it stays visible and crisp.
-  - The **`focus` token** resolves to `brand-52` (`#E04A18`), chosen so the indicator clears the 3:1
-    non-text minimum (§1.4.11) on both the canvas and white — the shipped `brand-50` did not.
-- **MUST** use `:focus-visible` (not `:focus`) so the indicator shows for keyboard users without
-  firing on mouse click.
-- **MUST** keep tab order in visual/DOM order; **MUST NOT** add positive `tabindex`.
-- **MUST** trap focus inside an open modal, return focus to the trigger on close, and make `Esc`
-  dismiss it. Popovers and dropdowns return focus to their trigger on close.
-- **MUST** meet a **3:1** non-text contrast for the focus ring against both the canvas and the card
-  (verified in the [table below](#contrast-generated)).
-
----
-
-## General
-
-**Keyboard & ARIA per component**
+## Keyboard & ARIA
 
 - SHOULD: Each component's interaction contract
 - SHOULD: "Roving tabindex" = one tab stop for the group; arrow keys move within it
-- MUST: Full keyboard support per [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/)
+- MUST: Full keyboard support per [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns)
 - MUST: Visible focus rings (`:focus-visible`; group with `:focus-within`)
 - MUST: Manage focus (trap, move, return) per APG patterns
 - NEVER: `outline: none` without visible focus replacement
 
 ---
+
+### Targets & Input
+
+- MUST: Hit target ≥24px (mobile ≥44px); if visual <24px, expand hit area
+- MUST: Mobile `<input>` font-size ≥16px to prevent iOS zoom
+- NEVER: Disable browser zoom (`user-scalable=no`, `maximum-scale=1`)
+- MUST: `touch-action: manipulation` to prevent double-tap zoom
+- SHOULD: Set `-webkit-tap-highlight-color` to match design
+
+### Forms
+
+- NEVER: Block paste in `<input>`/`<textarea>`
+- MUST: Loading buttons show spinner and keep original label
+- MUST: Enter submits focused input; in `<textarea>`, ⌘/Ctrl+Enter submits
+- MUST: Keep submit enabled until request starts; then disable with spinner
+- MUST: Accept free text, validate after—don't block typing
+- MUST: Allow incomplete form submission to surface validation
+- SHOULD: Disable spellcheck for emails/codes/usernames
+- SHOULD: Placeholders end with `…` and show example pattern
+- MUST: Warn on unsaved changes before navigation
+- MUST: Trim values to handle text expansion trailing spaces
+- MUST: No dead zones on checkboxes/radios; label+control share one hit target
+
+### State & Navigation
+
+- SHOULD: URL reflects state (deep-link filters/tabs/pagination/expanded panels)
+- SHOULD: Back/Forward restores scroll position
+- SHOULD: Links use `<a>`/`<Link>` for navigation (support Cmd/Ctrl/middle-click)
+- SHOULD: Use `<div onClick>` for navigation
+
+### Feedback
+
+- SHOULD: Optimistic UI; reconcile on response; on failure rollback or offer Undo
+- MUST: Confirm destructive actions or provide Undo window
+- MUST: Use polite `aria-live` for toasts/inline validation
+- SHOULD: Ellipsis (`…`) for options opening follow-ups ("Rename…") and loading states ("Loading…")
+
+### Touch & Drag
+
+- MUST: Generous targets, clear affordances; avoid finicky interactions
+- MUST: Delay first tooltip; subsequent peers instant
+- MUST: `overscroll-behavior: contain` in modals/drawers
+- MUST: During drag, disable text selection and set `inert` on dragged elements
+
+## Animation
+
+- MUST: Honor `prefers-reduced-motion` (provide reduced variant or disable)
+- SHOULD: Animate to clarify cause/effect or add deliberate delight
+- SHOULD: Choose easing to match the change (size/distance/trigger)
+- SHOULD: Animations interruptible and input-driven (no autoplay)
+- SHOULD: Correct `transform-origin` (motion starts where it "physically" should)
+
+## Layout
+
+- SHOULD: Optical alignment; adjust ±1px when perception beats geometry
+- MUST: Deliberate alignment to grid/baseline/edges—no accidental placement
+- SHOULD: Balance icon/text lockups (weight/size/spacing/color)
+- SHOULD: Verify mobile, laptop, ultra-wide (simulate ultra-wide at 50% zoom)
+- SHOULD: Respect safe areas (`env(safe-area-inset-*)`)
+- SHOULD: Avoid unwanted scrollbars; fix overflows
+
+## Content & Accessibility
+
+- SHOULD: Inline help first; tooltips last resort
+- SHOULD: Skeletons mirror final content to avoid layout shift
+- MUST: `<title>` matches current context
+- SHOULD: No dead ends; always offer next step/recovery
+- SHOULD: Design empty/sparse/dense/error states
+- SHOULD: Curly quotes (" "); avoid widows/orphans (`text-wrap: balance`)
+- SHOULD: `font-variant-numeric: tabular-nums` for number comparisons
+- MUST: Redundant status cues (not color-only); icons have text labels
+- MUST: Accessible names exist even when visuals omit labels
+- MUST: Use `…` character (not `...`)
+- SHOULD: Accurate `aria-label`; decorative elements `aria-hidden`
+- SHOULD: Icon-only buttons have descriptive `aria-label`
+- SHOULD: Prefer native semantics (`button`, `a`, `label`, `table`) before ARIA
+
+---
+
+## Text Handling
+
+- MUST: Text containers handle long content (`truncate`, `line-clamp-*`, `break-words`)
+- MUST: Flex children need `min-w-0` to allow truncation
+- MUST: Handle empty states—no broken UI for empty strings/arrays
+- MUST: -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
+
+---
+
+## Dark Mode & Theming
+
+- MUST: `color-scheme: dark` on `<html>` for dark themes
+- SHOULD: `<meta name="theme-color">` matches page background
+- MUST: Native `<select>`: explicit `background-color` and `color` (Windows fix)
+
+---
+
+## Design
+
+- SHOULD: Hue consistency
+- SHOULD: Accessible charts (color-blind-friendly palettes)
+- SHOULD: Meet contrast—prefer [APCA](https://apcacontrast.com) over WCAG 2.0
+
+---
+
+## Components
 
 | Component | Roles / attributes | Keyboard |
 | --------- | ------------------ | -------- |
@@ -74,12 +149,14 @@ WCAG 2.2 AA is the floor for every CDS surface. RFC 2119 keywords (MUST, MUST NO
 | **Banner** | `role="region" aria-label`; dismiss labelled | `Tab` to link + dismiss |
 | **CodeBlock** | `<pre><code>`; read-only; if copy is offered, the copy control is a labelled button | `Tab` reaches copy control |
 
-**Cross-cutting MUSTs**
+---
 
-- **MUST NOT** rely on color alone — pair every status color with an icon or text label.
-- **MUST** keep every control reachable and operable by keyboard, in visual order.
-- **MUST** give every icon-only control an accessible name; hide decorative icons from AT.
-- **MUST** support 200% zoom and reflow without loss of content or function.
+## Cross-cutting MUSTs
+
+- NEVER: Rely on color alone — pair every status color with an icon or text label
+- MUST: Keep every control reachable and operable by keyboard, in visual order
+- MUST: Give every icon-only control an accessible name
+- MUST: Support 200% zoom and reflow without loss of content or function
 
 ---
 
@@ -122,8 +199,9 @@ text needs **4.5:1**; non-text/UI (focus ring) needs **3:1**.
 | `focus` | `surface` | Focus indicator vs canvas (non-text, ≥3:1) | 3.74:1 | 3:1 | ✅ pass |
 | `focus` | `white` | Focus indicator vs card (non-text, ≥3:1) | 4.07:1 | 3:1 | ✅ pass |
 
-> ⚠️ 3 pairing(s) below their floor — see "Flagged pairings" below for which are accepted deviations vs open.
-<!-- CONTRAST:END -->
+> ⚠️ 3 pairing(s) below their floor — see "Flagged pairings" below for which are accepted deviations vs open
+
+---
 
 ### Flagged pairings — status
 
