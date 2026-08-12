@@ -2,16 +2,12 @@
 version: 0.1.4
 type: reference
 title: accessibility
-timestamp: 2026-07-20T00:00:00Z
+timestamp: 2026-08-12T00:00:00Z
 ---
 
 # Accessibility
 
-WCAG 2.2 AA is the floor for every CDS surface. [`DESIGN.md#accessibility`](../DESIGN.md#accessibility)
-carries the global rules; this file adds the **per-component keyboard, focus, and ARIA contract** a
-token file can't express, plus a **generated contrast table** for the core pairings.
-
-RFC 2119 keywords (MUST, MUST NOT, SHOULD, MAY) apply.
+WCAG 2.2 AA is the floor for every CDS surface. RFC 2119 keywords (MUST, MUST NOT, SHOULD, MAY) apply.
 
 ### Index
 
